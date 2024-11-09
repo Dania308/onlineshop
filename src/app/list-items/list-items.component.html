@@ -1,0 +1,13 @@
+<div>
+  <mat-card *ngFor="let item of items" class="item-card">
+    <mat-card-content>
+      <p>{{ item.title }}</p>
+      <p>{{ item.description }}</p>
+      <p>{{ item.price }}</p>
+      <p>{{ item.imageUrl }}</p>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-flat-button (click)="onDeleteItem(item)">Delete</button>
+    </mat-card-actions>
+  </mat-card>
+</div>

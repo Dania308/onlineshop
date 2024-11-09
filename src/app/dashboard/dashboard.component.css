@@ -1,0 +1,19 @@
+.page-container {
+  height: 100%;
+}
+
+.sidenav-content {
+  display: grid;
+  height: 100%;
+  /*align-items: center;*/
+  /*justify-content: center;*/
+}
+
+.container-sidenav {
+  padding: 20px;
+}
+
+.spacer {
+  flex: 1 1 auto;
+}
+

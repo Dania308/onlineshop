@@ -1,0 +1,47 @@
+<mat-card appearance="outlined">
+  <mat-card-content class="card-content">
+    <mat-form-field class="form-field">
+      <mat-label>Title</mat-label>
+      <input matInput type="text" [(ngModel)]="title">
+      @if (title) {
+        <button matSuffix mat-icon-button aria-label="Clear" (click)="title=''">
+          <mat-icon>close</mat-icon>
+        </button>
+      }
+    </mat-form-field>
+
+    <mat-form-field class="form-field">
+      <mat-label>Description</mat-label>
+      <input matInput type="text" [(ngModel)]="description">
+      @if (description) {
+        <button matSuffix mat-icon-button aria-label="Clear" (click)="description=''">
+          <mat-icon>close</mat-icon>
+        </button>
+      }
+    </mat-form-field>
+
+    <mat-form-field class="form-field">
+      <mat-label>Price</mat-label>
+      <input matInput type="text" [(ngModel)]="price">
+      @if (price) {
+        <button matSuffix mat-icon-button aria-label="Clear" (click)="price=0">
+          <mat-icon>close</mat-icon>
+        </button>
+      }
+    </mat-form-field>
+
+    <mat-form-field class="form-field">
+      <mat-label>Image URL</mat-label>
+      <input matInput type="text" [(ngModel)]="imageUrl">
+      @if (imageUrl) {
+        <button matSuffix mat-icon-button aria-label="Clear" (click)="imageUrl=''">
+          <mat-icon>close</mat-icon>
+        </button>
+      }
+    </mat-form-field>
+  </mat-card-content>
+
+  <mat-card-actions>
+    <button mat-flat-button class="btn-save" (click)="onSave()">Save</button>
+  </mat-card-actions>
+</mat-card>

@@ -1,0 +1,33 @@
+<mat-drawer-container class="page-container" autosize>
+  <mat-drawer #drawer class="container-sidenav" mode="side">
+    <p>Auto-resizing sidenav</p>
+    @if (showFilter) {
+      <p>Lorem, ipsum dolor sit amet consectetur.</p>
+    }
+    <button (click)="showFilter = !showFilter" mat-raised-button>
+      Toggle extra text
+    </button>
+  </mat-drawer>
+
+  <mat-toolbar>
+    <button mat-icon-button (click)="drawer.toggle()">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <span>Online Shop</span>
+    <span class="spacer"></span>
+    <button mat-icon-button>
+      <mat-icon>favorite</mat-icon>
+    </button>
+    <button mat-icon-button>
+      <mat-icon>share</mat-icon>
+    </button>
+  </mat-toolbar>
+
+
+  <div class="sidenav-content">
+    <app-list-items></app-list-items>
+
+  </div>
+
+</mat-drawer-container>
+
