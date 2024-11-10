@@ -25,9 +25,9 @@
 
 
   <div class="sidenav-content">
-    <app-add-edit-item></app-add-edit-item>
+    <app-add-edit-item [item]="selectedItem" ></app-add-edit-item>
 
-    <app-list-items></app-list-items>
+    <app-list-items (dataChange)="onReceiveSelectedItem($event)" ></app-list-items>
 
   </div>
 

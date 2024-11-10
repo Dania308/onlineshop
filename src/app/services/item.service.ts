@@ -49,4 +49,20 @@ export class ItemService {
   public getItemsList() {
     return this.itemObservable.asObservable();
   }
+
+  public updateItem(item: any) {
+    let body = {
+      id: item.id,
+      title: item.title,
+      description: item.description,
+      price: item.price,
+      imageUrl: item.imageUrl
+    };
+
+    this.httpClient.put(`${this.apiUrl}/items`, body).subscribe((response: any) => {
+      console.log(response);
+
+      this.readItems();
+    })
+  }
 }

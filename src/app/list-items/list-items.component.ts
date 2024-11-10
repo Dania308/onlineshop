@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {MatCard, MatCardActions, MatCardContent} from '@angular/material/card';
 import {NgForOf} from '@angular/common';
 import {ItemService} from '../services/item.service';
@@ -18,6 +18,7 @@ import {MatButton} from '@angular/material/button';
   styleUrl: './list-items.component.css'
 })
 export class ListItemsComponent implements OnInit {
+  @Output() dataChange: EventEmitter<any> = new EventEmitter();
   items: Array<any> = [];
 
   constructor(private itemService: ItemService) {
@@ -35,5 +36,10 @@ export class ListItemsComponent implements OnInit {
 
   public onDeleteItem(item: any) {
     this.itemService.deleteItem(item.id);
+  }
+
+  public onUpdateItem(item: any) {
+    console.log("Metoda onUpdateItem() - list-items");
+    this.dataChange.emit(item);
   }
 }

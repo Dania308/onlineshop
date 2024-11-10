@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, Input, OnChanges, SimpleChanges} from '@angular/core';
 import {MatCardModule} from '@angular/material/card';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
@@ -19,7 +19,8 @@ import {ItemService} from '../../services/item.service';
   templateUrl: './add-edit-item.component.html',
   styleUrl: './add-edit-item.component.css'
 })
-export class AddEditItemComponent {
+export class AddEditItemComponent implements OnChanges {
+  @Input() item: any;
   title: string = '';
   description: string = '';
   price: number = 0;
@@ -28,15 +29,49 @@ export class AddEditItemComponent {
   constructor(private itemService: ItemService) {
   }
 
-  public onSave():void {
-    let item = {
+  public onSave(): void {
+    let body = {
+      id: "",
       title: this.title,
       description: this.description,
       price: this.price,
       imageUrl: this.imageUrl
     };
-    console.log(item);
+    console.log(body);
 
-    this.itemService.createItem(item);
+    if (this.item != null) {
+    //   inseamna ca facem update
+      body.id = this.item.id;
+
+      this.itemService.updateItem(body);
+
+      // resetam variabila de item, pt insert
+      this.item = null;
+    } else {
+      this.itemService.createItem(body);
+    }
+
+    this.cleanUp();
+  }
+
+  ngOnChanges(changes: SimpleChanges): void {
+    console.log("Metoda ngOnChanges() - add-edit-item")
+    console.log(this.item);
+
+    if (this.item == null) {
+      this.cleanUp();
+    } else {
+      this.title = this.item.title
+      this.description = this.item.description;
+      this.price = this.item.price;
+      this.imageUrl = this.item.imageUrl;
+    }
+  }
+
+  private cleanUp() {
+    this.title = "";
+    this.description = "";
+    this.price = 0;
+    this.imageUrl = "";
   }
 }

@@ -17,4 +17,14 @@ import {ListItemsComponent} from '../list-items/list-items.component';
 })
 export class DashboardComponent {
   showFilter: boolean = false;
+
+  selectedItem: any;
+
+  constructor() {
+  }
+
+  public onReceiveSelectedItem(item: any) {
+    console.log("Metoda onReceiveSelectedItem() - dashboard")
+    this.selectedItem = item;
+  }
 }
