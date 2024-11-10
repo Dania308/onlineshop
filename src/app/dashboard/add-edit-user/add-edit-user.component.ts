@@ -63,9 +63,12 @@ export class AddEditUserComponent implements OnChanges {
       body.id = this.user.id;
 
       this.userService.updateUser(body);
+
+      this.user = null;
     } else {
       this.userService.createUser(body);
     }
+    this.cleanUp();
   }
 
   ngOnChanges(changes: SimpleChanges): void {
