@@ -1,5 +1,5 @@
 .form-field {
-  width: 200px;
+  /*width: 200px;*/
 }
 
 .card-content {
@@ -9,4 +9,8 @@
 .btn-save {
   margin-left: auto;
   margin-right: auto;
+}
+
+.card {
+  width: 400px;
 }

@@ -1,1 +1,79 @@
-<p>auth works!</p>
+<div style="height: 100%">
+  <mat-card *ngIf="viewType=='register'" appearance="outlined" class="card">
+    <mat-card-content class="card-content">
+      <mat-form-field class="form-field">
+        <mat-label>Username</mat-label>
+        <input matInput type="text" [(ngModel)]="username">
+        @if (username) {
+          <button matSuffix mat-icon-button aria-label="Clear" (click)="username=''">
+            <mat-icon>close</mat-icon>
+          </button>
+        }
+      </mat-form-field>
+
+      <mat-form-field class="form-field">
+        <mat-label>Email</mat-label>
+        <input matInput type="text" [(ngModel)]="email">
+        @if (email) {
+          <button matSuffix mat-icon-button aria-label="Clear" (click)="email=''">
+            <mat-icon>close</mat-icon>
+          </button>
+        }
+      </mat-form-field>
+
+      <mat-form-field class="form-field">
+        <mat-label>Password</mat-label>
+        <input matInput type="password" [(ngModel)]="password">
+        @if (password) {
+          <button matSuffix mat-icon-button aria-label="Clear" (click)="password=''">
+            <mat-icon>close</mat-icon>
+          </button>
+        }
+      </mat-form-field>
+
+      <mat-form-field class="form-field">
+        <mat-label>Confirm Password</mat-label>
+        <input matInput type="password" [(ngModel)]="confirmPassword">
+        @if (confirmPassword) {
+          <button matSuffix mat-icon-button aria-label="Clear" (click)="confirmPassword=''">
+            <mat-icon>close</mat-icon>
+          </button>
+        }
+      </mat-form-field>
+    </mat-card-content>
+
+    <mat-card-actions>
+      <button mat-flat-button class="btn-auth" (click)="onRegister()">Register</button>
+      <button mat-button class="btn-auth" (click)="viewType='login'">Back to login</button>
+    </mat-card-actions>
+  </mat-card>
+
+  <mat-card *ngIf="viewType=='login'" appearance="outlined" class="card">
+    <mat-card-content class="card-content">
+      <mat-form-field class="form-field">
+        <mat-label>Email</mat-label>
+        <input matInput type="text" [(ngModel)]="email">
+        @if (email) {
+          <button matSuffix mat-icon-button aria-label="Clear" (click)="email=''">
+            <mat-icon>close</mat-icon>
+          </button>
+        }
+      </mat-form-field>
+
+      <mat-form-field class="form-field">
+        <mat-label>Password</mat-label>
+        <input matInput type="password" [(ngModel)]="password">
+        @if (password) {
+          <button matSuffix mat-icon-button aria-label="Clear" (click)="password=''">
+            <mat-icon>close</mat-icon>
+          </button>
+        }
+      </mat-form-field>
+    </mat-card-content>
+
+    <mat-card-actions>
+      <button mat-flat-button class="btn-auth" (click)="onLogin()">Login</button>
+      <button mat-button class="btn-auth" (click)="viewType='register'">Create account</button>
+    </mat-card-actions>
+  </mat-card>
+</div>
