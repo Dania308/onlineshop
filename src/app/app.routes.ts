@@ -2,6 +2,7 @@ import { Routes } from '@angular/router';
 import {HomeComponent} from './home/home.component';
 import {AuthComponent} from './auth/auth.component';
 import {DashboardComponent} from './dashboard/dashboard.component';
+import {AuthGuard} from './auth/auth.guard';
 
 export const routes: Routes = [
   {
@@ -14,7 +15,8 @@ export const routes: Routes = [
   },
   {
     path: "admin",
-    component: DashboardComponent
+    component: DashboardComponent,
+    // canActivate: [AuthGuard]
   },
   {
     path: '', redirectTo: 'auth', pathMatch: "full"

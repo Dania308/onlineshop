@@ -45,6 +45,8 @@ export class AuthComponent {
 
       this.cleanUp();
 
+      this.authService.setAuthenticate(true);
+
       // navigarea controlata pe pagini
       // ne folsim de path-ul din fisierul de app.routes.ts
       this.router.navigateByUrl('/admin');

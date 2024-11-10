@@ -6,6 +6,7 @@ import {HttpClient} from '@angular/common/http';
 })
 export class AuthService {
   apiUrl: string = "https://api.codebyte-software.com:2323/api/users"
+  private isAuth: boolean = false;
 
   constructor(private httpClient: HttpClient) {
   }
@@ -27,5 +28,13 @@ export class AuthService {
     };
 
     return this.httpClient.post(`${this.apiUrl}/register`, body);
+  }
+
+  public isAuthenticated() {
+    return this.isAuth;
+  }
+
+  public setAuthenticate(isAuth: boolean) {
+    this.isAuth = isAuth;
   }
 }
