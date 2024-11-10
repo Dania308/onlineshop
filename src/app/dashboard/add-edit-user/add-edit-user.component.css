@@ -1,0 +1,12 @@
+card-content {
+  display: grid;
+}
+
+.card {
+  width: 400px;
+}
+
+.btn-save {
+  margin-left: auto;
+  margin-right: auto;
+}

@@ -29,6 +29,9 @@
 
     <app-list-items (dataChange)="onReceiveSelectedItem($event)" ></app-list-items>
 
+    <app-add-edit-user [user]="selectedUser"></app-add-edit-user>
+
+    <app-list-users (userChange)="onReceiveSelectedUser($event)"></app-list-users>
   </div>
 
 </mat-drawer-container>

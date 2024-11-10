@@ -19,6 +19,6 @@ export const routes: Routes = [
     // canActivate: [AuthGuard]
   },
   {
-    path: '', redirectTo: 'auth', pathMatch: "full"
+    path: '', redirectTo: 'admin', pathMatch: "full"
   }
 ];
