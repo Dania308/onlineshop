@@ -5,6 +5,7 @@ import {MatDrawer, MatDrawerContainer, MatSidenavModule} from '@angular/material
 import {MatIcon, MatIconModule} from '@angular/material/icon';
 import {MatToolbar, MatToolbarModule} from '@angular/material/toolbar';
 import {ListItemsComponent} from '../list-items/list-items.component';
+import {MatCard, MatCardContent} from '@angular/material/card';
 
 @Component({
   selector: 'app-home',
@@ -14,7 +15,9 @@ import {ListItemsComponent} from '../list-items/list-items.component';
     MatToolbarModule,
     MatButtonModule,
     MatIconModule,
-    ListItemsComponent
+    ListItemsComponent,
+    MatCard,
+    MatCardContent
   ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'

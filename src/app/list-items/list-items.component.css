@@ -1,3 +1,15 @@
 .item-card {
   margin-bottom: 16px;
+  margin-left: 8px;
+  margin-right: 8px;
+}
+
+.container-cards{
+  display: grid;
+  /*grid-template-rows: repeat(3, 250px);*/
+  grid-template-columns: repeat(3, 33vw);
+}
+
+.item-image{
+  width: 100%;
 }

@@ -1,6 +1,6 @@
-import {Component, EventEmitter, OnInit, Output} from '@angular/core';
+import {booleanAttribute, Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {MatCard, MatCardActions, MatCardContent} from '@angular/material/card';
-import {NgForOf} from '@angular/common';
+import {NgForOf, NgIf} from '@angular/common';
 import {ItemService} from '../services/item.service';
 import {MatButton} from '@angular/material/button';
 
@@ -12,13 +12,16 @@ import {MatButton} from '@angular/material/button';
     MatCardContent,
     NgForOf,
     MatCardActions,
-    MatButton
+    MatButton,
+    NgIf
   ],
   templateUrl: './list-items.component.html',
   styleUrl: './list-items.component.css'
 })
 export class ListItemsComponent implements OnInit {
   @Output() dataChange: EventEmitter<any> = new EventEmitter();
+  @Input({transform: booleanAttribute}) isAdminPage: boolean = false;
+
   items: Array<any> = [];
 
   constructor(private itemService: ItemService) {
@@ -41,5 +44,9 @@ export class ListItemsComponent implements OnInit {
   public onUpdateItem(item: any) {
     console.log("Metoda onUpdateItem() - list-items");
     this.dataChange.emit(item);
+  }
+
+  public onBuyItem(item: any) {
+    console.log(item);
   }
 }

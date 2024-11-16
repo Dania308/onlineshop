@@ -27,7 +27,7 @@
   <div class="sidenav-content">
     <app-add-edit-item [item]="selectedItem" ></app-add-edit-item>
 
-    <app-list-items (dataChange)="onReceiveSelectedItem($event)" ></app-list-items>
+    <app-list-items isAdminPage="true" (dataChange)="onReceiveSelectedItem($event)" ></app-list-items>
 
     <app-add-edit-user [user]="selectedUser"></app-add-edit-user>
 

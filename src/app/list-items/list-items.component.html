@@ -1,12 +1,15 @@
-<div>
+<div class="container-cards">
   <mat-card *ngFor="let item of items" class="item-card">
     <mat-card-content>
+      <img class="item-image" [src]="item.imageUrl">
       <p>{{ item.title }}</p>
       <p>{{ item.description }}</p>
       <p>{{ item.price }}</p>
-      <p>{{ item.imageUrl }}</p>
     </mat-card-content>
-    <mat-card-actions>
+    <mat-card-actions *ngIf="!isAdminPage">
+      <button mat-flat-button (click)="onBuyItem(item)">Buy</button>
+    </mat-card-actions>
+    <mat-card-actions *ngIf="isAdminPage">
       <button mat-flat-button (click)="onDeleteItem(item)">Delete</button>
       <button mat-flat-button (click)="onUpdateItem(item)">Update</button>
     </mat-card-actions>

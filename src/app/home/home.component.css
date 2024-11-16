@@ -4,6 +4,7 @@
 
 .sidenav-content {
   display: flex;
+  flex-direction: column;
   height: 100%;
   /*align-items: center;*/
   /*justify-content: center;*/
@@ -15,4 +16,15 @@
 
 .spacer {
   flex: 1 1 auto;
+}
+
+.container-images{
+  display: flex;
+}
+
+.image{
+  margin: 8px;
+  width: 33vw;
+  height: 150px;
+  object-fit: cover;
 }
