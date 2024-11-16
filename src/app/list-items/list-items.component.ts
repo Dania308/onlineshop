@@ -3,6 +3,7 @@ import {MatCard, MatCardActions, MatCardContent} from '@angular/material/card';
 import {NgForOf, NgIf} from '@angular/common';
 import {ItemService} from '../services/item.service';
 import {MatButton} from '@angular/material/button';
+import {OrderService} from '../services/order.service';
 
 @Component({
   selector: 'app-list-items',
@@ -24,7 +25,7 @@ export class ListItemsComponent implements OnInit {
 
   items: Array<any> = [];
 
-  constructor(private itemService: ItemService) {
+  constructor(private itemService: ItemService, private orderService: OrderService) {
   }
 
   ngOnInit(): void {
@@ -48,5 +49,6 @@ export class ListItemsComponent implements OnInit {
 
   public onBuyItem(item: any) {
     console.log(item);
+    this.orderService.addToCart(item);
   }
 }

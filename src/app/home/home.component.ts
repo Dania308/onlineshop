@@ -6,6 +6,7 @@ import {MatIcon, MatIconModule} from '@angular/material/icon';
 import {MatToolbar, MatToolbarModule} from '@angular/material/toolbar';
 import {ListItemsComponent} from '../list-items/list-items.component';
 import {MatCard, MatCardContent} from '@angular/material/card';
+import {CartButtonComponent} from '../cart-button/cart-button.component';
 
 @Component({
   selector: 'app-home',
@@ -17,7 +18,8 @@ import {MatCard, MatCardContent} from '@angular/material/card';
     MatIconModule,
     ListItemsComponent,
     MatCard,
-    MatCardContent
+    MatCardContent,
+    CartButtonComponent
   ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
